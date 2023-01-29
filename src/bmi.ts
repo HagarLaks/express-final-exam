@@ -39,5 +39,16 @@ export interface BmiOutput {
  */
 export default function bmi(input: BmiInput): BmiOutput {
     // TODO: implement me
+    const bmiOutput = input.weight/(input.height**2)
+    if (bmiOutput<18.5){
+        return {status: 0, bmi: bmiOutput};
+    } else if(bmiOutput>=18.5&&bmiOutput<25){
+        return {status: 1, bmi: bmiOutput};
+
+    } else if(bmiOutput>=25&&bmiOutput<30){
+        return {status: 2, bmi: bmiOutput};
+    } else if (bmiOutput>=30){
+        return {status: 3, bmi: bmiOutput};
+    } else 
     return {status: 0, bmi: 0};
 }
